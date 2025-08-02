@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Madeline Harper - Page Title</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Madeline Harper</h1>
+        <p class="tagline">Computer Science Graduate & Aspiring Developer</p>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="fade-in">
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- Restaurant Reviews Project -->
+        <div class="project">
+          <h3>
+            Restaurant Review Web Page
+            <a
+              href="https://github.com/mlcharper/Restaurant-Reviews"
+              class="download-button"
+              target="_blank"
+              >GitHub Repository</a
+            >
+            <a
+              href="https://mlcharper.github.io/Restaurant-Reviews/"
+              class="download-button"
+              target="_blank"
+              >Website Link</a
+            >
+          </h3>
+          <p>
+            A fictional restaurant review website inspired by real local
+            favorites and developed as part of a web development course. The
+            multi-page site features a custom-styled homepage, detailed review
+            pages, a contact form, and an interactive Google Maps location.
+            Built with clean HTML5 and CSS3, the site emphasizes layout
+            consistency, accessibility, mobile responsiveness, and a unique
+            visual theme created from scratch.
+          </p>
+          <p>
+            <strong>Technologies:</strong> HTML5, CSS3, Flexbox, Google Maps
+            embed
+          </p>
+        </div>
+
+        <!-- Measurement Calculator -->
+        <div class="project">
+          <h3>
+            Measurement Calculator
+            <a
+              href="https://github.com/mlcharper/Measurement_Calculator"
+              class="download-button"
+              target="_blank"
+              >GitHub Repository</a
+            >
+            <img
+              src="images/camera.png"
+              alt="View screenshot"
+              class="camera-icon"
+              id="openPhoto1"
+            />
+          </h3>
+          <p>
+            A simple measurement conversion tool developed using Visual Studio.
+            This Windows Forms application allows users to convert between
+            inches and centimeters with accurate real-time updates. Designed
+            with a clean user interface and clear input validation, the project
+            emphasizes precision, usability, and straightforward unit
+            conversions in a desktop environment.
+          </p>
+          <p><strong>Technologies:</strong> Python</p>
+        </div>
+
+        <!-- Pong Game (C# / Windows Forms) -->
+        <div class="project">
+          <h3>
+            Pong Game – C# Version
+            <a
+              href="https://github.com/mlcharper/Pong_sln"
+              class="download-button"
+              target="_blank"
+              >GitHub Repository</a
+            >
+            <img
+              src="images/camera.png"
+              alt="View screenshot"
+              class="camera-icon"
+              id="openPhoto2"
+            />
+          </h3>
+          <p>
+            A desktop recreation of the classic Pong game built with C# in
+            Visual Studio. This Windows Forms application features two-player
+            controls, dynamic ball physics, collision detection, and a scoring
+            system. Designed to reflect the original gameplay mechanics while
+            showcasing foundational skills in object movement, game logic, and
+            event-driven programming.
+          </p>
+          <p><strong>Technologies:</strong> C#, .NET, Windows Forms</p>
+        </div>
+
+        <!-- Stopwatch App -->
+        <div class="project">
+          <h3>
+            Stopwatch Utility
+            <a
+              href="https://github.com/mlcharper/Stopwatch"
+              class="download-button"
+              target="_blank"
+              >GitHub Repository</a
+            >
+            <img
+              src="images/camera.png"
+              alt="View screenshot"
+              class="camera-icon"
+              id="openPhoto3"
+            />
+          </h3>
+          <p>
+            A simple yet functional stopwatch application created with C# and
+            Windows Forms. The tool includes start, stop, and reset
+            capabilities, and presents real-time elapsed time updates in a clean
+            and minimal interface. This project highlights attention to timing
+            logic, responsive UI design, and event handling within a desktop
+            application context.
+          </p>
+          <p>
+            <strong>Technologies:</strong> C# or Python (depending on version –
+            update as needed)
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Madeline Harper</p>
+    </footer>
+
+    <!--Modal HTML Sections for each reference photo.
+    If adding addition photo in future each photo requires a HTML section.-->
+    <div id="photoModal1" class="modal">
+      <span class="close" id="closePhoto1">&times;</span>
+      <img class="modal-content" id="modalImage1" alt="Measurement Calculator Screenshot"/>
+    </div>
+
+    <div id="photoModal2" class="modal">
+      <span class="close" id="closePhoto2">&times;</span>
+      <img class="modal-content" id="modalImage2" alt="Pong Game Screenshot" />
+    </div>
+
+    <div id="photoModal3" class="modal">
+      <span class="close" id="closePhoto3">&times;</span>
+      <img class="modal-content" id="modalImage3" alt="Stopwatch Screenshot" />
+    </div>
+
+
+    <!--JS script for adding photo references for projects.
+    If adding addition photo in future each photo requires a "modals" item.-->
+    <script>
+      const modals = [
+        {
+          open: "openPhoto1",
+          modal: "photoModal1",
+          image: "modalImage1",
+          close: "closePhoto1",
+          src: "images/Calculator.png",
+        },
+        {
+          open: "openPhoto2",
+          modal: "photoModal2",
+          image: "modalImage2",
+          close: "closePhoto2",
+          src: "images/Pong.png",
+        },
+        {
+          open: "openPhoto3",
+          modal: "photoModal3",
+          image: "modalImage3",
+          close: "closePhoto3",
+          src: "images/Stopwatch.png",
+        },
+      ];
+
+      modals.forEach(({ open, modal, image, close, src }) => {
+        const openBtn = document.getElementById(open);
+        const modalEl = document.getElementById(modal);
+        const modalImg = document.getElementById(image);
+        const closeBtn = document.getElementById(close);
+
+        if (openBtn && modalEl && modalImg && closeBtn) {
+          openBtn.onclick = () => {
+            modalEl.style.display = "block";
+            modalImg.src = src;
+          };
+
+          closeBtn.onclick = () => {
+            modalEl.style.display = "none";
+          };
+
+          window.addEventListener("click", (e) => {
+            if (e.target === modalEl) {
+              modalEl.style.display = "none";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

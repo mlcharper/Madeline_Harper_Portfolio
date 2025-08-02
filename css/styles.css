@@ -1,0 +1,249 @@
+/* =========================
+   Root Variables
+   ========================= */
+:root {
+  --accent-color: #a252e3;
+  --accent-dark-color: #2dc7d2;
+  --font-color: #595959;
+  --bg-color: #e4e8ed;
+  --title-color: #dce4ef;
+}
+
+/* =========================
+   Global Styles
+   ========================= */
+body {
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #152b47;
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+header {
+  background: var(--bg-color);
+  color: var(--title-color);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: var(--title-color);
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.hero {
+  background: linear-gradient(to right, var(--accent-color), var(--accent-dark-color));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--title-color);
+  padding: 1rem 2rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.3rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   About Section
+   ========================= */
+.about-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profile-photo,
+.profile-pic {
+  border: 3px solid var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 300px;
+}
+
+/* =========================
+   Content Sections
+   ========================= */
+section {
+  margin: 2rem 0;
+}
+
+.project {
+  background: var(--bg-color);
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+/* =========================
+   Download Button
+   ========================= */
+.download-button {
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: var(--accent-dark-color);
+}
+
+/* =========================
+   Camera Icon
+   ========================= */
+.camera-icon {
+  cursor: pointer;
+  height: 32px;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+  width: 32px;
+}
+
+.camera-icon:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   Modal Styles
+   ========================= */
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  padding-top: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  display: block;
+  margin: auto;
+  max-height: 80vh;
+  max-width: 90%;
+}
+
+.close {
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  z-index: 1000;
+}
+
+.close:hover {
+  color: var(--accent-dark-color);
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  background: var(--bg-color);
+  color: var(--font-color);
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* =========================
+   Animations
+   ========================= */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Mobile Responsiveness
+   ========================= */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
